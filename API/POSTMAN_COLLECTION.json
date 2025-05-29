@@ -35,7 +35,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"name\": \"John Doe\",\n  \"email\": \"john@example.com\"\n}"
+              "raw": "{\n  \"name\": \"John Doe\",\n  \"NPM\": 12345678,\n  \"password\": \"password123\"\n}"
             },
             "url": {
               "raw": "http://localhost:3000/users",
@@ -43,6 +43,52 @@
               "host": ["localhost"],
               "port": "3000",
               "path": ["users"]
+            }
+          }
+        },
+        {
+          "name": "Register",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"John Doe\",\n  \"NPM\": 12345678,\n  \"password\": \"password123\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/user/register",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["user", "register"]
+            }
+          }
+        },
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"NPM\": 12345678,\n  \"password\": \"password123\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/user/login",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["user", "login"]
             }
           }
         },
@@ -72,7 +118,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"name\": \"Jane Doe\",\n  \"email\": \"jane@example.com\"\n}"
+              "raw": "{\n  \"name\": \"Jane Doe\",\n  \"NPM\": 87654321\n}"
             },
             "url": {
               "raw": "http://localhost:3000/users/:id",

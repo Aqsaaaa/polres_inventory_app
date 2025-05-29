@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../bloc/inventory/inventory_bloc.dart';
+import '../components/detail_barang.dart';
 
 class InventoryPage extends StatefulWidget {
   const InventoryPage({Key? key}) : super(key: key);
@@ -43,6 +44,14 @@ class _InventoryPageState extends State<InventoryPage> {
                   leading: item['gambar'] != null
                       ? Image.network('http://10.0.2.2:3000/uploads/${item['gambar']}', width: 50, height: 50, fit: BoxFit.cover)
                       : const Icon(Icons.image_not_supported),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => DetailBarangComponent(barang: item),
+                      ),
+                    );
+                  },
                 );
               },
             );

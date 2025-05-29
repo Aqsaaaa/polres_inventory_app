@@ -30,6 +30,24 @@ class UserController {
     if (!success) return res.status(404).json({ message: 'User not found' });
     res.status(204).send();
   };
+
+  register = async (req, res) => {
+    try {
+      const user = await this.userUseCase.register(req.body);
+      res.status(201).json(user);
+    } catch (error) {
+      res.status(400).json({ message: error.message });
+    }
+  };
+
+  login = async (req, res) => {
+    try {
+      const { token, user } = await this.userUseCase.login(req.body);
+      res.json({ token, user });
+    } catch (error) {
+      res.status(401).json({ message: error.message });
+    }
+  };
 }
 
 module.exports = UserController;

@@ -78,14 +78,16 @@ class _HistoryPageState extends State<HistoryPage> with SingleTickerProviderStat
             builder: (context) => CreateHistoryDialog(),
           );
         },
-        child: const Icon(Icons.add),
         tooltip: 'Create History',
+        child: const Icon(Icons.add),
       ),
     );
   }
 }
 
 class CreateHistoryDialog extends StatefulWidget {
+  const CreateHistoryDialog({super.key});
+
   @override
   _CreateHistoryDialogState createState() => _CreateHistoryDialogState();
 }
